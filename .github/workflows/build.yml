@@ -18,11 +18,11 @@ jobs:
                  os_name: Windows
                  artifact_name: SlowlyLetterDownloader-Windows.zip
                  exe_name: SlowlyLetterDownloader.exe
-               - os: macos-13
+               - os: macos-15
                  os_name: MacOS-Intel
                  artifact_name: SlowlyLetterDownloader-MacOS-Intel.zip
                  exe_name: SlowlyLetterDownloader.app
-               - os: macos-14
+               - os: macos-26
                  os_name: MacOS-AppleSilicon
                  artifact_name: SlowlyLetterDownloader-MacOS-Silicon.zip
                  exe_name: SlowlyLetterDownloader.app
