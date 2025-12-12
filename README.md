@@ -1,52 +1,129 @@
 # Slowly Letter Downloader
 
-A cross-platform tool to backup and download letters from the Slowly web application. This tool automates the process of saving your letters as PDF files, organizing them by pen pal.
+**A cross-platform tool to back up your Slowly letters safely, locally, and in an organized format.**
+This tool automates downloading your letters from the official Slowly web app and saves them as clean PDF files grouped by pen pal.
 
-## Features
+Slowly does not currently offer any built-in export or backup feature. Many users have years of conversations and personal memories stored inside the app — this project aims to give you control over your own data while keeping everything on your device.
 
--  Cross-platform support for macOS, Windows, and Linux
--  Modern browser automation using Playwright
--  Persistent login sessions to avoid repeated sign-ins
--  Clean and simple graphical user interface
--  Automatically organizes downloads by pen pal name
--  Detects existing files to avoid duplicates
+---
 
-## Requirements
+## ✨ Features
 
--  Python 3.8 or higher
--  Google Chrome browser
+* **Cross-platform:** macOS, Windows, and Linux supported
+* **Modern browser automation:** powered by Playwright
+* **Persistent login sessions:** no need to sign in every time
+* **Simple and clean graphical interface**
+* **Organized exports:** letters sorted into per-pen-pal folders
+* **Duplicate detection:** existing files are skipped automatically
+* **Local-only processing:** all data stays on your computer
 
-## Installation
+---
 
-1. Clone or download the repository
-2. Install the required Python packages
+## 📦 Requirements
 
-   pip install -r requirements.txt
+* Python **3.8+**
+* Google Chrome browser installed
 
-3. Install the browser binaries for Playwright
+---
 
-   playwright install chromium
+## 🔧 Installation
 
-## Usage
+Clone or download the repository:
 
-Run the main script to start the application:
+```bash
+git clone https://github.com/yourname/Slowly_Letter_Downloader
+cd Slowly_Letter_Downloader
+```
 
+Install required Python packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Install the browser engine for Playwright:
+
+```bash
+playwright install chromium
+```
+
+> Playwright automatically downloads its own Chromium build — no manual driver installation needed.
+
+---
+
+## 🚀 Usage
+
+Start the application:
+
+```bash
 python main.py
+```
 
-1. Click Login to open the browser.
-2. Sign in to your Slowly account in the opened window.
-3. Once logged in, click Scan Friends to load your pen pal list.
-4. Select the pen pals whose letters you want to download.
-5. Click Download Selected to start the process.
+### Workflow
 
-Letters are saved to the Slowly Letters folder on your Desktop.
+1. Click **Login**
+   A browser window will open.
 
-## Project Structure
+2. Sign in to your Slowly account inside that browser.
 
--  src/sld/core: Core logic for browser automation and downloading
--  src/sld/gui: User interface components
--  src/sld/config.py: Configuration and path management
+3. After login completes, return to the app and click **Scan Friends**
+   Your pen pals will be listed.
 
-## Disclaimer
+4. Select the pen pals whose letters you want to export.
 
-This tool is not affiliated with or endorsed by Slowly Communications Ltd. It is intended for personal backup purposes only.
+5. Click **Download Selected**
+   Letters will be downloaded and saved as PDF files.
+
+All exported letters will appear inside a folder named **Slowly Letters** on your Desktop, organized by pen pal.
+
+---
+
+## 📁 Project Structure
+
+```
+src/sld/
+│
+├── core/        # Browser automation, scraping logic, PDF generation
+├── gui/         # Graphical user interface components
+└── config.py    # Paths, session storage, configuration management
+```
+
+The project intentionally separates core logic and UI, making it easier to maintain, test, and extend.
+
+---
+
+## 🔒 Privacy & Safety Notes
+
+* This tool only accesses **your own Slowly account**.
+* No data is uploaded, shared, or sent to any server — everything stays on your machine.
+* The project does **not** attempt to interact with other users’ data or bypass any security restrictions.
+* It is intended **solely for personal backups** of your own letters.
+
+Slowly Communications Ltd. does not provide a data export option, despite many users relying on the app for long-term correspondence. This tool exists to give individuals control over their personal archives.
+
+---
+
+## ⚠️ Terms of Service Notice (Read Before Use)
+
+Automated tools can fall under “scraping” depending on Slowly's Terms of Service wording.
+Use this tool responsibly and only on your own account. The author assumes no liability for any misuse or account issues.
+
+---
+
+## 🤝 Contributing
+
+Contributions, bug reports, and feature suggestions are welcome!
+
+If you’d like to help:
+
+1. Fork the project
+2. Create a feature branch
+3. Submit a pull request
+
+Please keep core logic and UI separate when adding new features.
+
+---
+
+## ❤️ Acknowledgements
+
+Thanks to the Slowly community for the encouragement, the testing feedback, and the motivation to keep improving the tool. Many users have years of memories stored inside Slowly — preserving them matters.
