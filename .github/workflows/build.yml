@@ -22,7 +22,7 @@ jobs:
                  os_name: MacOS-Intel
                  artifact_name: SlowlyLetterDownloader-MacOS-Intel.zip
                  exe_name: SlowlyLetterDownloader.app
-               - os: macos-26
+               - os: macos-latest
                  os_name: MacOS-AppleSilicon
                  artifact_name: SlowlyLetterDownloader-MacOS-Silicon.zip
                  exe_name: SlowlyLetterDownloader.app
@@ -66,8 +66,10 @@ jobs:
            if: runner.os != 'Windows'
            run: |
               cd dist
-              chmod +x SlowlyLetterDownloader
-              tar -czf ../${{ matrix.artifact_name }} SlowlyLetterDownloader
+              if [ -f "${{ matrix.exe_name }}" ]; then
+                  chmod +x "${{ matrix.exe_name }}"
+              fi
+              tar -czf ../${{ matrix.artifact_name }} "${{ matrix.exe_name }}"
 
          - name: Upload Artifact
            uses: actions/upload-artifact@v4
