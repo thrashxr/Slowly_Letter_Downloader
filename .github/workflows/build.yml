@@ -96,5 +96,8 @@ jobs:
            uses: softprops/action-gh-release@v2
            with:
               files: releases/*
+              tag_name: ${{ github.ref_name }}
+              draft: ${{ github.event_name == 'workflow_dispatch' }}
+              prerelease: ${{ github.event_name == 'workflow_dispatch' }}
            env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
